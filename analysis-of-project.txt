@@ -1,0 +1,18 @@
+fsevents@^1.0.0
+
+
+
+tripPlan ---imgUploader
+D:\node\nodeproject\jing\qmtrip\public\mobile\tripPlan\controller.js
+ajax request
+D:\node\nodeproject\jing\qmtrip\api\attachment\upload.ts
+
+
+
+
+tripPlan ----direcotive
+D:\node\nodeproject\jing\qmtrip\www\libs\directives\trip-plan\index.ts
+
+
+on business-> landmark map--> html & controller
+D:\node\nodeproject\jing\qmtrip\nglibs\services\modal-dlg\map\dialog.html

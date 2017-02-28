@@ -1,0 +1,10 @@
+在本地的工程(可以是一个空文件夹）进行git操作。
+
+git init --本地工程命令
+初始化该工程，生成.git文件夹
+
+git add --本地工程命令
+告之git，你的工程内容的，生成snapshot。该snapshot存在于git的index临时区域
+
+git commit --本地工程命令
+将project文件永久的存储到index中
