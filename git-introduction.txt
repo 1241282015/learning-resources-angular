@@ -3,8 +3,18 @@
 git init --本地工程命令
 初始化该工程，生成.git文件夹
 
+git commit -a 
+在add前使用该语句，会自动监听文件的变化，add之后，即可直接git commit
+
 git add --本地工程命令
 告之git，你的工程内容的，生成snapshot。该snapshot存在于git的index临时区域
 
 git commit --本地工程命令
 将project文件永久的存储到index中
+
+
+
+
+git pull
+
+git pull时注意其他分支的pull， git pull --all

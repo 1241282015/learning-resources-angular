@@ -58,11 +58,17 @@ node-gyp
 https://github.com/nodejs/node-gyp
 
 
+lunar-calendar
+用于公历与阴历相转换。
+
 
 shoe
 
 
 pg
+
+sequelize的一个终端控制器，管理sequelize的链接等问题
+
 
 
 callsite

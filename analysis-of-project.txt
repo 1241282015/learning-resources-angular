@@ -14,5 +14,105 @@ tripPlan ----direcotive
 D:\node\nodeproject\jing\qmtrip\www\libs\directives\trip-plan\index.ts
 
 
+
+解决bug1：路标问题。
+
+
+点击路标输入框，触发D:\node\nodeproject\jing\qmtrip\nglibs\directives\selector\index.ts的函数showSelectorDlg函数，生成对话框
+
+暂未知如何出发以下的api。
 on business-> landmark map--> html & controller
 D:\node\nodeproject\jing\qmtrip\nglibs\services\modal-dlg\map\dialog.html
+
+
+
+已由他人解决bug2：wechat邀请员工
+
+通过接口和decorator注册了一系列的方法，如createdAt,deletedAt(D:\node\nodeproject\jing\qmtrip\common\model\common.ts)
+
+D:\node\nodeproject\jing\qmtrip\www\ionic\company\staff-invited.content.html
+
+
+
+invited-link中的createLink，试用createLink
+D:\node\nodeproject\jing\qmtrip\common\model\common.ts
+
+处理该模块的ts
+D:\node\nodeproject\jing\qmtrip\www\ionic\company\staff-invited.ts
+
+生成goInvitedLink,此时跳转到以下网页，使用decorator进行了
+D:\node\nodeproject\jing\qmtrip\api\_types\staff\invited-link.ts
+
+
+bug3  日期无法显示儿童节等节日。
+
+D:\node\nodeproject\jing\qmtrip\nglibs\services\modal-dlg\date\date-month.html
+
+
+
+登陆模块
+D:\node\nodeproject\jing\qmtrip\www\ionic\login\index.ts
+
+
+
+
+
+
+
+
+
+
+问题
+window.cordova
+
+bs
+
+
+
+
+定义了angular的入口，
+D:\node\nodeproject\jing\qmtrip\nglibs\models\index.ts
+
+slow api balabala
+D:\node\nodeproject\jing\qmtrip\common\api\index.ts
+
+
+
+数据库结构地址：
+D:\node\nodeproject\jing\qmtrip\api\sql\init.sql
+
+表结构：
+D:\node\nodeproject\jing\qmtrip\common\model\index.ts
+
+数据库
+D:\node\nodeproject\jing\qmtrip\common\api\sql_update.ts
+
+程序入口：
+---root目录下的server.js,此时初始化一系列服务，如apiserver，httpserver，等
+initAPISql
+initAPI
+	---initTcpServer(),tcp服务建立了self._.server (net.createServer)
+	---initShoeServer(),shoe服务建立了self._.websock 
+	---同时初始化了service(client目录），包括本地，远程：D:\node\nodeproject\jing\qmtrip\common\api\remote.ts,远程调用使用了reconnect-core模块，提供callback函数
+
+
+其中使用了shoe，zone，、
+
+初始化initSql服务时，读取了api模块的文件，去除了client和sql模块，同时将这些文件地址补全后，初始该文件列表
+
+---运行后，提示API监听端口4102， web端监听端口4002
+
+---访问web，localhost:4002,进入
+http://localhost:4002/#/login/?backurl=http:%2F%2Flocalhost:4002%2F
+存在backurl
+
+同时，D:\node\nodeproject\jing\qmtrip\common\api\index.ts的initShoeServer启动。
+
+
+---
+
+
+
+登陆入口：
+当未登录状态时，访问localhost:4002/时，进入
+http://localhost:4002/#/login/?backurl=http:%2F%2Flocalhost:4002%2F

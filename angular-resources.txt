@@ -1,11 +1,26 @@
 
+
+js
+
+encodeURLComponent(url)
+js提供的库函数，将url的特殊字符进行转义
+
+
 ===============================================================
 
 angular
 
 $watch
-两个参数和三个参数
+使用方式：
+$watch(para1, para2);
 
+$watch(para1,para2,para3)
+
+$watchGroup([],para2);
+
+
+usage:
+$scope.$watch()  //params provided are variables shown in webpage,not in controllers
 
 $digest
 
@@ -17,3 +32,91 @@ http://jimhoskins.com/2012/12/17/angularjs-and-apply.html
 
 angular
 使用$scope.$apply
+
+
+
+
+1.1.1 self-defined directives
+In some scenarioes, we need to create new child view and we need to bind data between parent and child view.So now we can define a element by ourselves.
+
+
+
+providing a function which can return a json data;
+{
+    restrict:"", //E=element, A=attribute, C=class, M=comment
+    scope:{
+         //@ reads attributes value, = provides two-way binding, & works with function， < provides one-way binding
+    },
+    template:"",
+    templateUrl:"",  //
+    controller:controllerFunction,
+    link:function($scope, element, attrs){}  //DOM manipulation
+}
+
+this kind of directives are mainly used to generate popup windows. 
+
+Note:
+angular provides a kind of popup window for users already:
+$ionicPopup
+
+
+
+reference:
+https://docs.angularjs.org/guide/component
+
+1.1.2 ngModel,ngHref,ngRequired, ngEnter
+
+ngHref:
+providing a {{hashvalue}} for ngHref which turns out to be ng-href in html page. If angular can't process and fetch hashvalue for page,than the link will lead to a wrong page.
+
+
+required
+used for select、input elements to check whether is empty
+
+myForm.userName.$error.required is to show the result of checking
+for example: 
+<form name="myForm">
+  User name: <input type="text" name="userName" required>
+  <span class="error" ng-show="myForm.userName.$error.required">Required!</span>
+</form>
+
+<javascript>
+  scope.userName = {name: 'zhangsan', validate: true}
+</javascript>
+<form name="myForm">
+  User name: <input type="text" name="userName" ng-required="userName.validate">
+  <span class="error" ng-show="myForm.userName.$error.required">Required!</span>
+</form>
+
+ng-required
+
+same with required, but an expression could be assigned to this attribute
+
+
+
+1.1.3 sessionStorage
+only available for current windows, if another window or tab open, the sesionStorage doesn't work any more
+
+
+
+
+
+1.1.4 sequelize
+
+
+
+
+1.1.5 $stateProvider
+
+
+
+
+problem
+
+how to shorten the long url link
+
+
+原生开发
+native-script
+
+react 
