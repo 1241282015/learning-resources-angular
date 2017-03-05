@@ -18,3 +18,26 @@ git commit --本地工程命令
 git pull
 
 git pull时注意其他分支的pull， git pull --all
+
+
+
+
+checkout
+
+1. creating a new branch
+
+
+2. creating a new branch and switch to new one
+usage:
+	---git checkout -b branchName
+note: 
+-b is short for branch
+
+
+
+3. retreat modified part of some files
+usage:
+	---git checkout filename
+note:
+when git status, some modified files that haven't sent to temporaray area will rollback to original status. Those changes will be removed in this file.
+	
