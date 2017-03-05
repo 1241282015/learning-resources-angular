@@ -19,7 +19,7 @@ git pull
 
 git pull时注意其他分支的pull， git pull --all
 
-================feature branch================================
+================develop branch（fetched from feature)======================
 checkout
 
 1. creating a new branch
