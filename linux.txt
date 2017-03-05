@@ -1,0 +1,6 @@
+ssl
+
+secure socket layer
+
+tls
+transportation layer security

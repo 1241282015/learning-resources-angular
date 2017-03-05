@@ -40,5 +40,5 @@ note:
 when git status, some modified files that haven't sent to temporaray area will rollback to original status. Those changes will be removed in this file.
 
 
-this line is newly added to differ feature branch
+
 	
