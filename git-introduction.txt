@@ -41,6 +41,9 @@ note:
 if branchName is not in remote repository, then this new branch will be generated and those files having been modified will be send to remote repository.
 
 
+git branch -a 
+1.to list all local and remote branch
+
 
 
 
