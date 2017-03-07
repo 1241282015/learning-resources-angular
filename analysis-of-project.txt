@@ -116,3 +116,242 @@ http://localhost:4002/#/login/?backurl=http:%2F%2Flocalhost:4002%2F
 登陆入口：
 当未登录状态时，访问localhost:4002/时，进入
 http://localhost:4002/#/login/?backurl=http:%2F%2Flocalhost:4002%2F
+
+
+
+===========================================================================
+Models.xxx此时调用的就是该文件下的service的包。
+D:\node\nodeproject\jing\qmtrip\nglibs\models\index.ts
+
+
+notice存在于
+D:\node\nodeproject\jing\qmtrip\api\notice\index.ts
+
+
+D:\node\nodeproject\jing\qmtrip\api\_types\notice\notice.ts
+
+
+
+
+
+
+===========================================================================
+模块1：新加入用户后，给管理员发送通知。
+staff表中每个员工存在roleId
+company存在companyId
+
+
+
+
+D:\node\nodeproject\jingli\qmtrip\public\corp\StaffManage\controller.js
+
+是staffManagement控制器
+
+
+用户注册时，系统进行数据库操作位置(wechat share)
+D:\node\nodeproject\jing\qmtrip\api\staff\index.ts
+
+
+
+微信添加员工
+D:\node\nodeproject\jing\qmtrip\www\ionic\login\invited-staff-two.html
+D:\node\nodeproject\jing\qmtrip\www\ionic\login\invited-staff-two.ts
+
+处理：
+D:\node\nodeproject\jing\qmtrip\www\ionic\login\invited-staff-two.ts
+第130添加处理notify请求
+
+
+
+D:\node\nodeproject\jing\qmtrip\api\company\index.ts 
+存在给企业发送通知的范例
+
+
+
+批量添加员工
+D:\node\nodeproject\jing\qmtrip\www\corp-mgr\index\index.html
+D:\node\nodeproject\jing\qmtrip\www\corp-mgr\index\index.ts
+
+处理batchImportStaff的实现
+D:\node\nodeproject\jing\qmtrip\api\staff\index.ts
+
+
+处理notify：
+在92行
+
+手动添加员工
+D:\node\nodeproject\jing\qmtrip\www\ionic\department\new-staff.html
+D:\node\nodeproject\jing\qmtrip\www\ionic\department\new-staff.ts
+
+在249行
+
+
+
+总的处理办法：
+D:\node\nodeproject\jing\qmtrip\api\notice\index.ts
+此文件给定了创建appMessage
+
+-----------------------------------------------------------------------------------------------------
+代码如下啊：
+      //below sending notice to company admin
+                let company=await API.company.getCompanyById($scope.form.companyId);
+                let managers=await company.getManagers({withOwner:true});
+                //给各个企业管理员发送通知
+
+                await Promise.all(managers.map( (manager) => {
+                    return API.notify.submitNotify({
+                        accountId: manager.id,
+                        key: "qm_notify_admins_add_staff",
+                        values: {
+                            staff:$scope.form.name
+                        }
+                    });
+                }));
+
+
+
+张帆
+15055901964
+zhangli@gmail.com
+sfahaelo
+
+-----------------------------------------------------------------------------------
+var Company=require("api/_type/company"); //added by jack
+
+                //below sending notice to company admin: added by jack
+                let company=await Company.getCompany({id: $scope.form.companyId});
+                let managers=await company.getManagers({withOwner:true});
+
+                await Promise.all(managers.map( (manager) => {
+                    return API.notify.submitNotify({
+                        accountId: manager.id,
+                        key: "qm_notify_admins_add_staff",
+                        values: {
+                            staff:$scope.form.name
+                        }
+                    });
+                }));
+
+
+----------------------------------------------------------------------------------------------------
+backdetail
+
+
+        let managers=$scope.staff.company.getManagers({withOwners:false});
+        Promise.all(managers.map((manager)=>{
+            API.notice.submitNotify({
+                accountId:manager.id,
+                key:"qm_notify_admins_add_staff",
+                values:{
+                   staff:$scope.staff.name
+                }
+            });
+
+        }));
+
+
+----------------------------------------------------------------------------------------------------
+        let staff = $scope.staff;
+        let managers=await staff.company.getManagers({withOwners:false});
+        console.log("this is in backtoDetail: ", managers);
+        await Promise.all(managers.map((manager)=>{
+            console.log("in managers");
+
+        }));
+
+
+
+
+--------------------------------------------------------------------------
+    async function sendNoticeToAdmins(){
+
+        //below sending notice to company admin: added by jack
+
+        API.require("notify");
+        await API.onload();
+        console.log("api load: ",API);
+        let managers=await $scope.staff.company.getManagers({withOwners:false});
+        console.log("new-staff.ts: retrieve staff: ",managers);
+        await Promise.all(managers.map( (manager) => {
+            return API.notify.submitNotify({
+                accountId: manager.id,
+                key: "qm_notify_admins_add_staff",
+                values: {
+                    staff:$scope.form.name
+                }
+            });
+        }));
+        console.log("add new staff send notice done");
+    }
+
+--------------------------------------------------------------------------
+
+
+
+
+notice的标准定义
+D:\node\nodeproject\jing\qmtrip\api\notice\index.ts
+
+
+notice的创建和template的生成、submitNotify的声明
+D:\node\nodeproject\jing\qmtrip\api\notify\index.ts
+
+
+根据companyId获取company对象
+全局查Company.get
+
+API.company.getCompanyById(staff.companyId)
+Models.company.get(staff.companyId)
+
+问题：
+D:\node\nodeproject\jing\qmtrip\api\_decorator.ts
+此文件 
+let company = await Models.company.get(tp["companyId"]);//此处为什么不能用tp.company
+
+
+
+
+D:\node\nodeproject\jing\qmtrip\public\corp\StaffManage\controller.js
+D:\node\nodeproject\jing\qmtrip\public\agency\companyList\controller.js
+createStaff
+
+
+==========================================================
+
+clientexports  decorator
+
+處理方法定義：
+D:\node\nodeproject\jing\qmtrip\api\staff\index.ts ：150行定義了sendNoticeToAdmains函數
+
+微信分享處理位于
+
+D:\node\nodeproject\jing\qmtrip\api\auth\index.ts  460用於處理wechat share的notice send
+
+手動添加用戶時，在new-staff中調用位于api/staff/index中的sendNoticeToAdmins
+
+D:\node\nodeproject\jing\qmtrip\www\ionic\department\new-staff.ts ：337和353 前段調用
+D:\node\nodeproject\jing\qmtrip\api\_types\staff\staff.ts  165 供前段調用
+
+
+批量增加用戶
+D:\node\nodeproject\jing\qmtrip\api\staff\index.ts  ：749調用sendNoticeToAdmin
+
+
+
+===============================================================================================
+
+
+
+D:\node\nodeproject\jing\qmtrip\api\_types\staff\staff.ts
+
+getBatchAddStaffEmail()
+
+ console.log('testServerFunc');
+
+
+
+skipLink@<%=appMessageUrl || '' %> 在appmessage.html如何處理
+
+https://zhuanlan.zhihu.com/p/20297283?columnSlug=FrontendMagazine
+
+http://blog.wolksoftware.com/decorators-reflection-javascript-typescript
