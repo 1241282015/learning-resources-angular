@@ -20,6 +20,8 @@ D:\node\nodeproject\jing\qmtrip\www\libs\directives\trip-plan\index.ts
 
 点击路标输入框，触发D:\node\nodeproject\jing\qmtrip\nglibs\directives\selector\index.ts的函数showSelectorDlg函数，生成对话框
 
+D:\node\nodeproject\jingli\qmtrip\nglibs\directives\wheelpicker\citypicker.ts 定义了ngSeletorCity
+
 暂未知如何出发以下的api。
 on business-> landmark map--> html & controller
 D:\node\nodeproject\jing\qmtrip\nglibs\services\modal-dlg\map\dialog.html
@@ -355,3 +357,10 @@ skipLink@<%=appMessageUrl || '' %> 在appmessage.html如何處理
 https://zhuanlan.zhihu.com/p/20297283?columnSlug=FrontendMagazine
 
 http://blog.wolksoftware.com/decorators-reflection-javascript-typescript
+
+
+
+
+成功发送短信: 18210731234 您的差旅服务账户已开通，用户名：18210731234，密码：731234，请登录修改密码，谨防
+
+
