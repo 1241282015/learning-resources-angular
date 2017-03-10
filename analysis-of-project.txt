@@ -20,8 +20,6 @@ D:\node\nodeproject\jing\qmtrip\www\libs\directives\trip-plan\index.ts
 
 点击路标输入框，触发D:\node\nodeproject\jing\qmtrip\nglibs\directives\selector\index.ts的函数showSelectorDlg函数，生成对话框
 
-D:\node\nodeproject\jingli\qmtrip\nglibs\directives\wheelpicker\citypicker.ts 定义了ngSeletorCity
-
 暂未知如何出发以下的api。
 on business-> landmark map--> html & controller
 D:\node\nodeproject\jing\qmtrip\nglibs\services\modal-dlg\map\dialog.html
@@ -342,7 +340,9 @@ D:\node\nodeproject\jing\qmtrip\api\staff\index.ts  ：749調用sendNoticeToAdmin
 
 ===============================================================================================
 
-
+18210731812
+陈龙
+longchen@gmail.com
 
 D:\node\nodeproject\jing\qmtrip\api\_types\staff\staff.ts
 

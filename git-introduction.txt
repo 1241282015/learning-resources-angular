@@ -76,3 +76,24 @@ when git status, some modified files that haven't sent to temporaray area will r
 this line is newly added to differ feature branch
 >>>>>>> feature
 	
+
+
+
+
+git show 显示修改内容
+git pull origin branch_name
+git push origin branch_name  
+usage:
+    having branch: feature/QMTRIP-25
+    git pull origin feature/QMTRIP-25
+
+
+git ls-files
+显示文档目录结构
+
+
+git rm -f file_name
+remove files in temporary local storage。 
+usage：
+	--git rm -f www/ionic/trip/booking-details.html
+
