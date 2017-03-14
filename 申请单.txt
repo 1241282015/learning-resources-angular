@@ -1,0 +1,329 @@
+result:  { price: 1560,
+  type: 1,
+  No: 'CA1760',
+  agent: 'ctrip',
+  cabin: 3,
+  destination: '杭州',
+  originPlace: '重庆',
+  departDateTime: 2017-03-18T03:45:00.000Z,
+  arrivalDateTime: 2017-03-18T06:05:00.000Z,
+  id: 'a61192c0-0868-11e7-8276-c1e30cbbe899' }
+
+
+提供一个火车票和飞机票的数组，对这个数组进行分析。获取如上的结果页,其中cabin存储了价格,仓位，剩余数
+  { No: 'K1247',
+    agents: [ [Object] ],
+    departDateTime: '2017-03-18 16:29 +0800',
+    arrivalDateTime: '2017-03-20 05:51 +0800',
+    originPlace: 
+     { id: 'CT_132',
+       skyCode: 'CCKG-sky',
+       baiduCode: '132',
+       name: '重庆',
+       pinyin: 'chongqing',
+       letter: 'CQS',
+       latitude: 29.544606,
+       longitude: 106.530635,
+       parentId: '',
+       cityLevel: 10000,
+       didaCode: '6140323',
+       type: 2,
+       ctripCode: 'CKG',
+       enName: null,
+       isAbroad: false,
+       timezone: 'Asia/Chongqing',
+       offsetUtc: 28800 },
+    destination: 
+     { id: 'CT_179',
+       skyCode: 'CHGH-sky',
+       baiduCode: '179',
+       name: '杭州',
+       pinyin: 'hangzhou',
+       letter: 'HZS',
+       latitude: 30.259244,
+       longitude: 120.219375,
+       parentId: 'CT_29',
+       cityLevel: 10000,
+       didaCode: '1454',
+       type: 2,
+       ctripCode: 'HGH',
+       enName: null,
+       isAbroad: false,
+       timezone: 'Asia/Shanghai',
+       offsetUtc: 28800 },
+    duration: 2242,
+    originStation: '重庆',
+    destinationStation: '杭州',
+    type: 0 } ]
+
+
+cabin的结构：
+ticket.agents
+[{name:"ctrip", cabins:[[object]]}]
+
+
+ticket.agents.cabins
+[{name:2, price:620}]
+
+ticket.agents.cabins
+{name:2, price:620}
+
+
+
+
+m_destination { id: 'CT_289',
+  skyCode: 'CSHA-sky',
+  baiduCode: '289',
+  name: '上海',
+  pinyin: 'shanghai',
+  letter: 'SHS',
+  latitude: 31.249162,
+  longitude: 121.487899,
+  parentId: '',
+  cityLevel: 10000,
+  didaCode: '180026',
+  type: 2,
+  ctripCode: 'SHA',
+  enName: null,
+  isAbroad: false,
+  timezone: 'Asia/Shanghai',
+  offsetUtc: 28800 }
+
+
+
+
+
+
+result:  { price: 219.5,
+  type: 0,
+  No: 'G86',
+  agent: 'ctrip',
+  cabin: 1,
+  destination: 
+   { id: 'CT_289',
+     skyCode: 'CSHA-sky',
+     baiduCode: '289',
+     name: '上海',
+     pinyin: 'shanghai',
+     letter: 'SHS',
+     latitude: 31.249162,
+     longitude: 121.487899,
+     parentId: '',
+     cityLevel: 10000,
+     didaCode: '180026',
+     type: 2,
+     ctripCode: 'SHA',
+     enName: null,
+     isAbroad: false,
+     timezone: 'Asia/Shanghai',
+     offsetUtc: 28800 },
+  originPlace: 
+   { id: 'CT_179',
+     skyCode: 'CHGH-sky',
+     baiduCode: '179',
+     name: '杭州',
+     pinyin: 'hangzhou',
+     letter: 'HZS',
+     latitude: 30.259244,
+     longitude: 120.219375,
+     parentId: 'CT_29',
+     cityLevel: 10000,
+     didaCode: '1454',
+     type: 2,
+     ctripCode: 'HGH',
+     enName: null,
+     isAbroad: false,
+     timezone: 'Asia/Shanghai',
+     offsetUtc: 28800 },
+  departDateTime: '2017-03-19 14:02 +0800',
+  arrivalDateTime: '2017-03-19 14:50 +0800',
+  id: '8d5f6cc0-0895-11e7-a45a-f545da862a74' }
+
+
+航班
+train_ticket:  [ { originPlace: '上海',
+    destination: '广州',
+    No: '9C8929',
+    carry: '春秋',
+    departDateTime: 2017-03-17T14:00:00.000Z,
+    arrivalDateTime: 2017-03-17T16:40:00.000Z,
+    agents: [ [Object] ],
+    type: 1 },
+  { originPlace: '上海',
+    destination: '广州',
+    No: 'HU7142',
+    carry: '海航',
+    departDateTime: 2017-03-17T03:55:00.000Z,
+    arrivalDateTime: 2017-03-17T06:40:00.000Z,
+    agents: [ [Object] ],
+    type: 1 },
+
+
+
+hotel的结构
+hotel:  [ { name: '重庆雾都宾馆',
+    latitude: 29.564908,
+    longitude: 106.551346,
+    agents: [ [Object] ],
+    star: 5,
+    checkInDate: 2017-03-17T00:00:00.000Z,
+    checkOutDate: 2017-03-18T00:00:00.000Z },
+  { name: '重庆丽晶酒店',
+    latitude: 29.571272,
+    longitude: 106.570819,
+    agents: [ [Object] ],
+    star: 5,
+    checkInDate: 2017-03-17T00:00:00.000Z,
+    checkOutDate: 2017-03-18T00:00:00.000Z },
+  { name: '重庆威灵顿酒店',
+    latitude: 29.610303,
+    longitude: 106.519976,
+    agents: [ [Object] ],
+    star: 5,
+    checkInDate: 2017-03-17T00:00:00.000Z,
+    checkOutDate: 2017-03-18T00:00:00.000Z },
+  { name: '重庆广场宾馆',
+    latitude: 29.560586,
+    longitude: 106.552189,
+    agents: [ [Object] ],
+    star: 4,
+    checkInDate: 2017-03-17T00:00:00.000Z,
+    checkOutDate: 2017-03-18T00:00:00.000Z },
+  { name: '重庆颐和幸福酒店',
+    latitude: 29.609362,
+    longitude: 106.507173,
+    agents: [ [Object] ],
+    star: 4,
+    checkInDate: 2017-03-17T00:00:00.000Z,
+    checkOutDate: 2017-03-18T00:00:00.000Z },
+
+
+hotel的qs數據
+qs:  { prefers: 
+   [ { name: 'priceRange', options: [Object] },
+     { name: 'starMatch', options: [Object] },
+     { name: 'represent', options: [Object] },
+     { name: 'blackList', options: [Object] },
+     { name: 'price', options: [Object] } ],
+  query: 
+   { star: [ 2, 3, 4, 5 ],
+     city: 
+      { id: 'CT_132',
+        skyCode: 'CCKG-sky',
+        baiduCode: '132',
+        name: '重庆',
+        pinyin: 'chongqing',
+        letter: 'CQS',
+        latitude: 29.544606,
+        longitude: 106.530635,
+        parentId: '',
+        cityLevel: 10000,
+        didaCode: '6140323',
+        type: 2,
+        ctripCode: 'CKG',
+        enName: null,
+        isAbroad: false,
+        timezone: 'Asia/Chongqing',
+        offsetUtc: 28800 },
+     latitude: '29.522753',
+     longitude: '106.525461',
+     businessDistrict: '29.522753,106.525461',
+     checkInDate: 2017-03-17T00:00:00.000Z,
+     checkOutDate: 2017-03-19T00:00:00.000Z,
+     isAbroad: false } }
+
+
+
+
+query
+
+qs:  { prefers: 
+   [ { name: 'priceRange', options: [Object] },
+     { name: 'starMatch', options: [Object] },
+     { name: 'represent', options: [Object] },
+     { name: 'blackList', options: [Object] },
+     { name: 'price', options: [Object] } ],
+  query: 
+   { star: [ 2, 3, 4, 5 ],
+     city: 
+      { id: 'CT_132',
+        skyCode: 'CCKG-sky',
+        baiduCode: '132',
+        name: '重庆',
+        pinyin: 'chongqing',
+        letter: 'CQS',
+        latitude: 29.544606,
+        longitude: 106.530635,
+        parentId: '',
+        cityLevel: 10000,
+        didaCode: '6140323',
+        type: 2,
+        ctripCode: 'CKG',
+        enName: null,
+        isAbroad: false,
+        timezone: 'Asia/Chongqing',
+        offsetUtc: 28800 },
+     latitude: '29.522753',
+     longitude: '106.525461',
+     businessDistrict: '29.522753,106.525461',
+     checkInDate: 2017-03-17T00:00:00.000Z,
+     checkOutDate: 2017-03-19T00:00:00.000Z,
+     isAbroad: false } }
+
+
+
+query:  { star: [ 2, 3, 4, 5 ],
+  city: 
+   { id: 'CT_132',
+     skyCode: 'CCKG-sky',
+     baiduCode: '132',
+     name: '重庆',
+     pinyin: 'chongqing',
+     letter: 'CQS',
+     latitude: 29.544606,
+     longitude: 106.530635,
+     parentId: '',
+     cityLevel: 10000,
+     didaCode: '6140323',
+     type: 2,
+     ctripCode: 'CKG',
+     enName: null,
+     isAbroad: false,
+     timezone: 'Asia/Chongqing',
+     offsetUtc: 28800 },
+  latitude: '29.522753',
+  longitude: '106.525461',
+  businessDistrict: '29.522753,106.525461',
+  checkInDate: 2017-03-17T00:00:00.000Z,
+  checkOutDate: 2017-03-19T00:00:00.000Z,
+  isAbroad: false }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

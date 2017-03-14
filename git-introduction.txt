@@ -97,3 +97,11 @@ remove files in temporary local storage。
 usage：
 	--git rm -f www/ionic/trip/booking-details.html
 
+
+
+如何复原已删除文件
+git reset www/ionic/trip/create_bak.ts
+
+git reset HEAD www/ionic/trip/create_bak.ts
+
+
