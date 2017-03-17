@@ -20,7 +20,7 @@ git pull
 
 git pull时注意其他分支的pull， git pull --all
 
-<<<<<<< HEAD
+
 
 git branch
 1.to show all branch we have
@@ -50,7 +50,7 @@ git branch -a
 
 =======
 ================develop branch======================
->>>>>>> feature
+
 checkout
 
 1. creating a new branch
@@ -69,12 +69,10 @@ usage:
 	---git checkout filename
 note:
 when git status, some modified files that haven't sent to temporaray area will rollback to original status. Those changes will be removed in this file.
-<<<<<<< HEAD
-=======
 
 
 this line is newly added to differ feature branch
->>>>>>> feature
+
 	
 
 
@@ -99,9 +97,21 @@ usage：
 
 
 
+git branch -d branch_name
+usage:
+	--to delete branch
+
+
 如何复原已删除文件
 git reset www/ionic/trip/create_bak.ts
 
 git reset HEAD www/ionic/trip/create_bak.ts
 
+
+
+
+执行tsc可以确定是否本地版本是否存在问题，然后决定是否需要push
+
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
