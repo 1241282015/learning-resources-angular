@@ -110,6 +110,40 @@ git reset HEAD www/ionic/trip/create_bak.ts
 
 
 
+git diff
+查看本地版本与远程版本是否一致
+usage:
+	---git diff origin/master
+可能的结果：
+diff --git a/JLTypes b/JLTypes
+new file mode 160000
+index 0000000..75803bc
+--- /dev/null
++++ b/JLTypes
+@@ -0,0 +1 @@
++Subproject commit 75803bc27ebb1a7cd632383d715e67dc457ed463
+diff --git a/_types b/_types
+new file mode 160000
+index 0000000..239335d
+--- /dev/null
++++ b/_types
+@@ -0,0 +1 @@
++Subproject commit 239335d7fb54f33398b4f937239176a43c77c197
+diff --git a/common b/common
+index 95e7999..bf9a57e 160000
+--- a/common
++++ b/common
+@@ -1 +1 @@
+-Subproject commit 95e79997afebc175c477f4a4d217feff15b74a3f
++Subproject commit bf9a57e5cd2989fc68ab3b67b7a2610d4546b2b3
+
+
+注意：当使用git diff test 时，提示ambiguous argument test，此时使用
+git diff test --
+
+使用checkout 
+
+
 执行tsc可以确定是否本地版本是否存在问题，然后决定是否需要push
 
   (use "git add <file>..." to update what will be committed)
