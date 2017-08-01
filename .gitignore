@@ -1,0 +1,6 @@
+node_modules
+dist
+.idea
+config/config.local.json
+log
+jingli.docx
